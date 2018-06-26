@@ -78,7 +78,11 @@ var myQuote = "Our lives are defined by opportunities; even the ones we miss.";
 Benjamin.addEventListener('click', quoteBox);
 
 function quoteBox(){
-    displayQuote.innerHTML = myQuote;
+    if (displayQuote.innerHTML === ''){
+        displayQuote.innerHTML = myQuote
+    }else{
+        displayQuote.innerHTML = ''
+    }
 }
 
 
@@ -89,12 +93,27 @@ var quotes = ["It's a funny thing about comin' home. Looks the same, smells the 
 
 random.addEventListener('click', randomQuotes);
 
-var x = Math.floor((Math.random() * quotes.length))
+
 function randomQuotes(){
-    displayQuotes.innerHTML = quotes[x];
+    var x1 = Math.floor((Math.random() * quotes.length));
+    if (displayQuotes.innerHTML === ''){
+        displayQuotes.innerHTML = quotes[x1]
+    }else{
+        displayQuotes.innerHTML = '';
+    }
 }
 
 //9. Unlock the Secret to Financial Freedom
 /*Create an event listener that will show and hide the message when clicking on the button.
 */
 
+showHide.addEventListener('click', hideSeek);
+
+
+function hideSeek(){
+    if (showmoney.style.display=== 'block'){
+        showmoney.style.display = 'none';
+    }else{
+        showmoney.style.display ='block'
+    }
+}
